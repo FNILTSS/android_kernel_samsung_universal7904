@@ -627,6 +627,9 @@ void services_compute_xperms_drivers(
 {
 	unsigned int i;
 
+	if (node->datum.u.xperms->specified == AVTAB_XPERMS_NLMSG)
+		return;
+
 	if (node->datum.u.xperms->specified == AVTAB_XPERMS_IOCTLDRIVER) {
 		/* if one or more driver has all permissions allowed */
 		for (i = 0; i < ARRAY_SIZE(xperms->drivers.p); i++)
