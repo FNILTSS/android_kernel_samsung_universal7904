@@ -35,7 +35,9 @@
 
 			firmware {
 				android {
+					boot_devices = "13500000.dwmmc0";
 					compatible = "android,firmware";
+					super_partition = "system";
 					vbmeta {
 						compatible = "android,vbmeta";
 						parts = "vbmeta,boot,recovery,system,vendor,product,dtb,dtbo";
